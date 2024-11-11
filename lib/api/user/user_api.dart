@@ -1,10 +1,15 @@
-import 'api.dart';
-import 'bujuan_music_api.dart';
-import 'music_interceptors.dart';
+import 'package:bujuan_music_api/api/user/user_info_entity.dart';
+
+import '../../common/music_api.dart';
+import '../../common/music_interceptors.dart';
+import '../api.dart';
 
 mixin UserApi {
-  userInfo() {
-    BujuanMusicManager().post(url: Api.userInfo, options: joinOptions(encryptType: EncryptType.weApi), data: {});
+  ///用户信息（需登录）
+  userInfo() async {
+    UserInfoEntity? userInfo = await BujuanMusicManager().post<UserInfoEntity>(
+        url: Api.userInfo, options: createOption(encryptType: EncryptType.weApi), data: {});
+    return userInfo;
   }
 
   /// 登录手机号接口
@@ -35,7 +40,7 @@ mixin UserApi {
       'https': https,
     };
 
-    BujuanMusicManager().post(url: Api.loginCellPhone, options: joinOptions(), data: data);
+    BujuanMusicManager().post(url: Api.loginCellPhone, options: createOption(), data: data);
   }
 
   /// 发送验证码
@@ -47,7 +52,7 @@ mixin UserApi {
       'cellphone': phone,
       'ctcode': ctcode,
     };
-    BujuanMusicManager().post(url: Api.sendSmsCode, options: joinOptions(), data: data);
+    BujuanMusicManager().post(url: Api.sendSmsCode, options: createOption(), data: data);
   }
 
   /// 验证验证码
@@ -61,8 +66,6 @@ mixin UserApi {
       'captcha': captcha,
       'ctcode': ctcode,
     };
-    BujuanMusicManager().post(url: Api.verifySmsCode, options: joinOptions(), data: data);
+    BujuanMusicManager().post(url: Api.verifySmsCode, options: createOption(), data: data);
   }
-
-
 }

@@ -7,17 +7,13 @@ import 'package:dio/dio.dart';
 import 'package:dio_cookie_manager/dio_cookie_manager.dart';
 import 'package:encrypt/encrypt.dart';
 import 'package:pointycastle/digests/md5.dart';
-import 'bujuan_music_api.dart';
+import 'music_api.dart';
 import 'encrypt.dart';
 
 const String defaultHost = 'https://interface.music.163.com';
 const realIp = 'X-Real-IP';
 
-enum EncryptType {
-  linuxForward,
-  weApi,
-  eApi,
-}
+enum EncryptType { linuxForward, weApi, eApi }
 
 enum UserAgent { random, pc, mobile }
 
@@ -38,7 +34,7 @@ const userAgentList = [
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/13.10586'
 ];
 
-Options joinOptions(
+Options createOption(
         {EncryptType encryptType = EncryptType.weApi,
         UserAgent userAgent = UserAgent.random,
         Map<String, String> cookies = const {},
@@ -91,8 +87,16 @@ class MusicApiInterceptors extends InterceptorsWrapper {
 
   @override
   void onResponse(Response response, ResponseInterceptorHandler handler) {
-    // TODO: implement onResponse
-    super.onResponse(response, handler);
+    if (response.statusCode != 200 || response.data == null) {
+      return;
+    }
+
+    // final Map<String, dynamic> responseData = response.data;
+    // BaseApiResponse apiResponse = BaseApiResponse()
+    //   ..code = responseData['code'] ?? 0
+    //   ..data = (responseData..remove('code'));
+    // response.data = apiResponse.toJson();
+    handler.next(response);
   }
 
   String getUserAgent(UserAgent agent) {
