@@ -1,9 +1,12 @@
 import 'dart:convert';
 import 'dart:io';
 import 'dart:math';
+import 'dart:typed_data';
 import 'package:cookie_jar/cookie_jar.dart';
 import 'package:dio/dio.dart';
 import 'package:dio_cookie_manager/dio_cookie_manager.dart';
+import 'package:encrypt/encrypt.dart';
+import 'package:pointycastle/digests/md5.dart';
 import 'bujuan_music_api.dart';
 import 'encrypt.dart';
 
@@ -46,6 +49,11 @@ Options joinOptions(
       'cookies': cookies,
       'realIP': realIP
     });
+
+//密码加密
+String encryptPassword(String password) {
+  return Encrypted(MD5Digest().process(Uint8List.fromList(utf8.encode(password)))).base16;
+}
 
 class MusicApiInterceptors extends InterceptorsWrapper {
   @override
