@@ -7,8 +7,12 @@ UserPlaylistEntity $UserPlaylistEntityFromJson(Map<String, dynamic> json) {
   if (more != null) {
     userPlaylistEntity.more = more;
   }
-  final List<UserPlaylistPlaylist>? playlist = (json['playlist'] as List<dynamic>?)?.map(
-          (e) => jsonConvert.convert<UserPlaylistPlaylist>(e) as UserPlaylistPlaylist).toList();
+  final List<UserPlaylistPlaylist>? playlist = (json['playlist'] as List<
+      dynamic>?)
+      ?.map(
+          (e) =>
+      jsonConvert.convert<UserPlaylistPlaylist>(e) as UserPlaylistPlaylist)
+      .toList();
   if (playlist != null) {
     userPlaylistEntity.playlist = playlist;
   }
@@ -42,8 +46,10 @@ extension UserPlaylistEntityExtension on UserPlaylistEntity {
 
 UserPlaylistPlaylist $UserPlaylistPlaylistFromJson(Map<String, dynamic> json) {
   final UserPlaylistPlaylist userPlaylistPlaylist = UserPlaylistPlaylist();
-  final List<dynamic>? subscribers = (json['subscribers'] as List<dynamic>?)?.map(
-          (e) => e).toList();
+  final List<dynamic>? subscribers = (json['subscribers'] as List<dynamic>?)
+      ?.map(
+          (e) => e)
+      .toList();
   if (subscribers != null) {
     userPlaylistPlaylist.subscribers = subscribers;
   }
@@ -51,8 +57,8 @@ UserPlaylistPlaylist $UserPlaylistPlaylistFromJson(Map<String, dynamic> json) {
   if (subscribed != null) {
     userPlaylistPlaylist.subscribed = subscribed;
   }
-  final UserPlaylistPlaylistCreator? creator = jsonConvert.convert<UserPlaylistPlaylistCreator>(
-      json['creator']);
+  final UserPlaylistPlaylistCreator? creator = jsonConvert.convert<
+      UserPlaylistPlaylistCreator>(json['creator']);
   if (creator != null) {
     userPlaylistPlaylist.creator = creator;
   }
@@ -72,11 +78,13 @@ UserPlaylistPlaylist $UserPlaylistPlaylistFromJson(Map<String, dynamic> json) {
   if (updateFrequency != null) {
     userPlaylistPlaylist.updateFrequency = updateFrequency;
   }
-  final int? backgroundCoverId = jsonConvert.convert<int>(json['backgroundCoverId']);
+  final int? backgroundCoverId = jsonConvert.convert<int>(
+      json['backgroundCoverId']);
   if (backgroundCoverId != null) {
     userPlaylistPlaylist.backgroundCoverId = backgroundCoverId;
   }
-  final String? backgroundCoverUrl = jsonConvert.convert<String>(json['backgroundCoverUrl']);
+  final String? backgroundCoverUrl = jsonConvert.convert<String>(
+      json['backgroundCoverUrl']);
   if (backgroundCoverUrl != null) {
     userPlaylistPlaylist.backgroundCoverUrl = backgroundCoverUrl;
   }
@@ -84,11 +92,13 @@ UserPlaylistPlaylist $UserPlaylistPlaylistFromJson(Map<String, dynamic> json) {
   if (titleImage != null) {
     userPlaylistPlaylist.titleImage = titleImage;
   }
-  final String? titleImageUrl = jsonConvert.convert<String>(json['titleImageUrl']);
+  final String? titleImageUrl = jsonConvert.convert<String>(
+      json['titleImageUrl']);
   if (titleImageUrl != null) {
     userPlaylistPlaylist.titleImageUrl = titleImageUrl;
   }
-  final String? englishTitle = jsonConvert.convert<String>(json['englishTitle']);
+  final String? englishTitle = jsonConvert.convert<String>(
+      json['englishTitle']);
   if (englishTitle != null) {
     userPlaylistPlaylist.englishTitle = englishTitle;
   }
@@ -96,11 +106,13 @@ UserPlaylistPlaylist $UserPlaylistPlaylistFromJson(Map<String, dynamic> json) {
   if (opRecommend != null) {
     userPlaylistPlaylist.opRecommend = opRecommend;
   }
-  final int? subscribedCount = jsonConvert.convert<int>(json['subscribedCount']);
+  final int? subscribedCount = jsonConvert.convert<int>(
+      json['subscribedCount']);
   if (subscribedCount != null) {
     userPlaylistPlaylist.subscribedCount = subscribedCount;
   }
-  final int? cloudTrackCount = jsonConvert.convert<int>(json['cloudTrackCount']);
+  final int? cloudTrackCount = jsonConvert.convert<int>(
+      json['cloudTrackCount']);
   if (cloudTrackCount != null) {
     userPlaylistPlaylist.cloudTrackCount = cloudTrackCount;
   }
@@ -120,7 +132,8 @@ UserPlaylistPlaylist $UserPlaylistPlaylistFromJson(Map<String, dynamic> json) {
   if (privacy != null) {
     userPlaylistPlaylist.privacy = privacy;
   }
-  final int? trackUpdateTime = jsonConvert.convert<int>(json['trackUpdateTime']);
+  final int? trackUpdateTime = jsonConvert.convert<int>(
+      json['trackUpdateTime']);
   if (trackUpdateTime != null) {
     userPlaylistPlaylist.trackUpdateTime = trackUpdateTime;
   }
@@ -132,7 +145,8 @@ UserPlaylistPlaylist $UserPlaylistPlaylistFromJson(Map<String, dynamic> json) {
   if (updateTime != null) {
     userPlaylistPlaylist.updateTime = updateTime;
   }
-  final String? commentThreadId = jsonConvert.convert<String>(json['commentThreadId']);
+  final String? commentThreadId = jsonConvert.convert<String>(
+      json['commentThreadId']);
   if (commentThreadId != null) {
     userPlaylistPlaylist.commentThreadId = commentThreadId;
   }
@@ -160,7 +174,8 @@ UserPlaylistPlaylist $UserPlaylistPlaylistFromJson(Map<String, dynamic> json) {
   if (newImported != null) {
     userPlaylistPlaylist.newImported = newImported;
   }
-  final int? trackNumberUpdateTime = jsonConvert.convert<int>(json['trackNumberUpdateTime']);
+  final int? trackNumberUpdateTime = jsonConvert.convert<int>(
+      json['trackNumberUpdateTime']);
   if (trackNumberUpdateTime != null) {
     userPlaylistPlaylist.trackNumberUpdateTime = trackNumberUpdateTime;
   }
@@ -197,7 +212,8 @@ UserPlaylistPlaylist $UserPlaylistPlaylistFromJson(Map<String, dynamic> json) {
   if (id != null) {
     userPlaylistPlaylist.id = id;
   }
-  final String? coverimgidStr = jsonConvert.convert<String>(json['coverImgId_str']);
+  final String? coverimgidStr = jsonConvert.convert<String>(
+      json['coverImgId_str']);
   if (coverimgidStr != null) {
     userPlaylistPlaylist.coverimgidStr = coverimgidStr;
   }
@@ -205,7 +221,8 @@ UserPlaylistPlaylist $UserPlaylistPlaylistFromJson(Map<String, dynamic> json) {
   if (copied != null) {
     userPlaylistPlaylist.copied = copied;
   }
-  final bool? containsTracks = jsonConvert.convert<bool>(json['containsTracks']);
+  final bool? containsTracks = jsonConvert.convert<bool>(
+      json['containsTracks']);
   if (containsTracks != null) {
     userPlaylistPlaylist.containsTracks = containsTracks;
   }
@@ -332,7 +349,8 @@ extension UserPlaylistPlaylistExtension on UserPlaylistPlaylist {
       ..createTime = createTime ?? this.createTime
       ..highQuality = highQuality ?? this.highQuality
       ..newImported = newImported ?? this.newImported
-      ..trackNumberUpdateTime = trackNumberUpdateTime ?? this.trackNumberUpdateTime
+      ..trackNumberUpdateTime = trackNumberUpdateTime ??
+          this.trackNumberUpdateTime
       ..playCount = playCount ?? this.playCount
       ..adType = adType ?? this.adType
       ..description = description ?? this.description
@@ -347,7 +365,8 @@ extension UserPlaylistPlaylistExtension on UserPlaylistPlaylist {
   }
 }
 
-UserPlaylistPlaylistCreator $UserPlaylistPlaylistCreatorFromJson(Map<String, dynamic> json) {
+UserPlaylistPlaylistCreator $UserPlaylistPlaylistCreatorFromJson(
+    Map<String, dynamic> json) {
   final UserPlaylistPlaylistCreator userPlaylistPlaylistCreator = UserPlaylistPlaylistCreator();
   final bool? defaultAvatar = jsonConvert.convert<bool>(json['defaultAvatar']);
   if (defaultAvatar != null) {
@@ -405,7 +424,8 @@ UserPlaylistPlaylistCreator $UserPlaylistPlaylistCreatorFromJson(Map<String, dyn
   if (description != null) {
     userPlaylistPlaylistCreator.description = description;
   }
-  final String? detailDescription = jsonConvert.convert<String>(json['detailDescription']);
+  final String? detailDescription = jsonConvert.convert<String>(
+      json['detailDescription']);
   if (detailDescription != null) {
     userPlaylistPlaylistCreator.detailDescription = detailDescription;
   }
@@ -413,11 +433,13 @@ UserPlaylistPlaylistCreator $UserPlaylistPlaylistCreatorFromJson(Map<String, dyn
   if (avatarImgId != null) {
     userPlaylistPlaylistCreator.avatarImgId = avatarImgId;
   }
-  final int? backgroundImgId = jsonConvert.convert<int>(json['backgroundImgId']);
+  final int? backgroundImgId = jsonConvert.convert<int>(
+      json['backgroundImgId']);
   if (backgroundImgId != null) {
     userPlaylistPlaylistCreator.backgroundImgId = backgroundImgId;
   }
-  final String? backgroundUrl = jsonConvert.convert<String>(json['backgroundUrl']);
+  final String? backgroundUrl = jsonConvert.convert<String>(
+      json['backgroundUrl']);
   if (backgroundUrl != null) {
     userPlaylistPlaylistCreator.backgroundUrl = backgroundUrl;
   }
@@ -446,15 +468,18 @@ UserPlaylistPlaylistCreator $UserPlaylistPlaylistCreatorFromJson(Map<String, dyn
   if (remarkName != null) {
     userPlaylistPlaylistCreator.remarkName = remarkName;
   }
-  final int? authenticationTypes = jsonConvert.convert<int>(json['authenticationTypes']);
+  final int? authenticationTypes = jsonConvert.convert<int>(
+      json['authenticationTypes']);
   if (authenticationTypes != null) {
     userPlaylistPlaylistCreator.authenticationTypes = authenticationTypes;
   }
-  final String? avatarDetail = jsonConvert.convert<String>(json['avatarDetail']);
+  final String? avatarDetail = jsonConvert.convert<String>(
+      json['avatarDetail']);
   if (avatarDetail != null) {
     userPlaylistPlaylistCreator.avatarDetail = avatarDetail;
   }
-  final String? backgroundImgIdStr = jsonConvert.convert<String>(json['backgroundImgIdStr']);
+  final String? backgroundImgIdStr = jsonConvert.convert<String>(
+      json['backgroundImgIdStr']);
   if (backgroundImgIdStr != null) {
     userPlaylistPlaylistCreator.backgroundImgIdStr = backgroundImgIdStr;
   }
@@ -462,18 +487,21 @@ UserPlaylistPlaylistCreator $UserPlaylistPlaylistCreatorFromJson(Map<String, dyn
   if (anchor != null) {
     userPlaylistPlaylistCreator.anchor = anchor;
   }
-  final String? avatarImgIdStr = jsonConvert.convert<String>(json['avatarImgIdStr']);
+  final String? avatarImgIdStr = jsonConvert.convert<String>(
+      json['avatarImgIdStr']);
   if (avatarImgIdStr != null) {
     userPlaylistPlaylistCreator.avatarImgIdStr = avatarImgIdStr;
   }
-  final String? avatarimgidStr = jsonConvert.convert<String>(json['avatarImgId_str']);
+  final String? avatarimgidStr = jsonConvert.convert<String>(
+      json['avatarImgId_str']);
   if (avatarimgidStr != null) {
     userPlaylistPlaylistCreator.avatarimgidStr = avatarimgidStr;
   }
   return userPlaylistPlaylistCreator;
 }
 
-Map<String, dynamic> $UserPlaylistPlaylistCreatorToJson(UserPlaylistPlaylistCreator entity) {
+Map<String, dynamic> $UserPlaylistPlaylistCreatorToJson(
+    UserPlaylistPlaylistCreator entity) {
   final Map<String, dynamic> data = <String, dynamic>{};
   data['defaultAvatar'] = entity.defaultAvatar;
   data['province'] = entity.province;

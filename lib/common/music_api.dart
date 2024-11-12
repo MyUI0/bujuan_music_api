@@ -49,7 +49,7 @@ class BujuanMusicManager with UserApi, RecommendApi,TopApi {
         responseHeader: false,
         error: true,
         compact: true,
-        maxWidth: 120,
+        maxWidth: 200,
         enabled: _debug));
   }
 

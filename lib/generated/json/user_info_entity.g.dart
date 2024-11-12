@@ -3,11 +3,13 @@ import 'package:bujuan_music_api/api/user/entity/user_info_entity.dart';
 
 UserInfoEntity $UserInfoEntityFromJson(Map<String, dynamic> json) {
   final UserInfoEntity userInfoEntity = UserInfoEntity();
-  final UserInfoAccount? account = jsonConvert.convert<UserInfoAccount>(json['account']);
+  final UserInfoAccount? account = jsonConvert.convert<UserInfoAccount>(
+      json['account']);
   if (account != null) {
     userInfoEntity.account = account;
   }
-  final UserInfoProfile? profile = jsonConvert.convert<UserInfoProfile>(json['profile']);
+  final UserInfoProfile? profile = jsonConvert.convert<UserInfoProfile>(
+      json['profile']);
   if (profile != null) {
     userInfoEntity.profile = profile;
   }
@@ -50,7 +52,8 @@ UserInfoAccount $UserInfoAccountFromJson(Map<String, dynamic> json) {
   if (status != null) {
     userInfoAccount.status = status;
   }
-  final int? whitelistAuthority = jsonConvert.convert<int>(json['whitelistAuthority']);
+  final int? whitelistAuthority = jsonConvert.convert<int>(
+      json['whitelistAuthority']);
   if (whitelistAuthority != null) {
     userInfoAccount.whitelistAuthority = whitelistAuthority;
   }
@@ -162,11 +165,13 @@ UserInfoProfile $UserInfoProfileFromJson(Map<String, dynamic> json) {
   if (avatarUrl != null) {
     userInfoProfile.avatarUrl = avatarUrl;
   }
-  final int? backgroundImgId = jsonConvert.convert<int>(json['backgroundImgId']);
+  final int? backgroundImgId = jsonConvert.convert<int>(
+      json['backgroundImgId']);
   if (backgroundImgId != null) {
     userInfoProfile.backgroundImgId = backgroundImgId;
   }
-  final String? backgroundUrl = jsonConvert.convert<String>(json['backgroundUrl']);
+  final String? backgroundUrl = jsonConvert.convert<String>(
+      json['backgroundUrl']);
   if (backgroundUrl != null) {
     userInfoProfile.backgroundUrl = backgroundUrl;
   }
@@ -186,7 +191,8 @@ UserInfoProfile $UserInfoProfileFromJson(Map<String, dynamic> json) {
   if (accountType != null) {
     userInfoProfile.accountType = accountType;
   }
-  final String? shortUserName = jsonConvert.convert<String>(json['shortUserName']);
+  final String? shortUserName = jsonConvert.convert<String>(
+      json['shortUserName']);
   if (shortUserName != null) {
     userInfoProfile.shortUserName = shortUserName;
   }
@@ -222,7 +228,8 @@ UserInfoProfile $UserInfoProfileFromJson(Map<String, dynamic> json) {
   if (description != null) {
     userInfoProfile.description = description;
   }
-  final String? detailDescription = jsonConvert.convert<String>(json['detailDescription']);
+  final String? detailDescription = jsonConvert.convert<String>(
+      json['detailDescription']);
   if (detailDescription != null) {
     userInfoProfile.detailDescription = detailDescription;
   }
@@ -278,7 +285,8 @@ UserInfoProfile $UserInfoProfileFromJson(Map<String, dynamic> json) {
   if (viptypeVersion != null) {
     userInfoProfile.viptypeVersion = viptypeVersion;
   }
-  final int? authenticationTypes = jsonConvert.convert<int>(json['authenticationTypes']);
+  final int? authenticationTypes = jsonConvert.convert<int>(
+      json['authenticationTypes']);
   if (authenticationTypes != null) {
     userInfoProfile.authenticationTypes = authenticationTypes;
   }
