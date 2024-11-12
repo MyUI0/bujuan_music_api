@@ -1,17 +1,13 @@
-import 'package:bujuan_music_api/api/user/user_info_entity.dart';
+import 'package:bujuan_music_api/api/common_api_response.dart';
+import 'package:bujuan_music_api/api/user/entity/qrcode_key_entity.dart';
+import 'package:bujuan_music_api/api/user/entity/user_info_entity.dart';
+import 'package:bujuan_music_api/api/user/entity/user_playlist_entity.dart';
 
 import '../../common/music_api.dart';
 import '../../common/music_interceptors.dart';
 import '../api.dart';
 
 mixin UserApi {
-  ///用户信息（需登录）
-  userInfo() async {
-    UserInfoEntity? userInfo = await BujuanMusicManager().post<UserInfoEntity>(
-        url: Api.userInfo, options: createOption(encryptType: EncryptType.weApi), data: {});
-    return userInfo;
-  }
-
   /// 登录手机号接口
   ///
   /// [phone] 手机号（必填）
@@ -47,12 +43,13 @@ mixin UserApi {
   ///
   /// [phone] 手机号（必填）
   /// [ctcode] 国家代码（可选，默认为 '86'）
-  sendSmsCode({required String phone, String ctcode = '86'}) {
-    var data = {
-      'cellphone': phone,
-      'ctcode': ctcode,
-    };
-    BujuanMusicManager().post(url: Api.sendSmsCode, options: createOption(), data: data);
+  Future<CommonApiResponse<bool>?> sendSmsCode({
+    required String phone,
+    String ctcode = '86',
+  }) async {
+    final data = {'cellphone': phone, 'ctcode': ctcode};
+    return await BujuanMusicManager()
+        .post<CommonApiResponse<bool>>(url: Api.sendSmsCode, options: createOption(), data: data);
   }
 
   /// 验证验证码
@@ -60,12 +57,77 @@ mixin UserApi {
   /// [phone] 手机号（必填）
   /// [captcha] 手机号（必填）
   /// [ctcode] 国家代码（可选，默认为 '86'）
-  verifySmsCode({required String phone, required String captcha, String ctcode = '86'}) {
-    var data = {
+  Future<CommonApiResponse<bool>?> verifySmsCode({
+    required String phone,
+    required String captcha,
+    String ctcode = '86',
+  }) async {
+    final data = {
       'cellphone': phone,
       'captcha': captcha,
       'ctcode': ctcode,
     };
-    BujuanMusicManager().post(url: Api.verifySmsCode, options: createOption(), data: data);
+    return await BujuanMusicManager()
+        .post<CommonApiResponse<bool>>(url: Api.verifySmsCode, options: createOption(), data: data);
+  }
+
+  /// 二维码key
+  ///
+  /// [type] 类型（可选，默认为 3）
+  Future<QrcodeKeyEntity?> qrCodeKey({int type = 3}) async {
+    final data = {'type': type};
+    return await BujuanMusicManager()
+        .post<QrcodeKeyEntity>(url: Api.qrCodeKey, options: createOption(), data: data);
+  }
+
+  /// 二维码
+  ///
+  /// [key] 二维码key（必填）
+  String qrCode({required String key}) {
+    return '$defaultUrl/login?codekey=$key';
+  }
+
+  /// 检测二维码
+  ///
+  /// [type] 类型（可选，默认为 3）
+  Future<CommonApiResponse<String>?> checkQrCode({
+    required String key,
+    int type = 3,
+  }) async {
+    final data = {
+      'key': key,
+      'type': type,
+    };
+    return await BujuanMusicManager()
+        .post<CommonApiResponse<String>>(url: Api.checkQrCode, options: createOption(), data: data);
+  }
+
+  ///用户信息（需登录）
+  Future<UserInfoEntity?> userInfo() async {
+    return await BujuanMusicManager().post<UserInfoEntity>(
+        url: Api.userInfo, options: createOption(encryptType: EncryptType.weApi), data: {});
+  }
+
+  /// 用户歌单
+  ///
+  /// [uid] 用户id（必填）
+  /// [limit] 30
+  /// [offset] 0
+  Future<UserPlaylistEntity?> userPlaylist(
+      {required String uid, int limit = 30, int offset = 0, bool includeVideo = true}) async {
+    final data = {
+      'uid': uid,
+      'limit': limit,
+      'offset': offset,
+      'includeVideo': includeVideo,
+    };
+    return await BujuanMusicManager()
+        .post<UserPlaylistEntity>(url: Api.userPlaylist, options: createOption(), data: data);
+  }
+
+  /// 退出登录
+  Future<CommonApiResponse<bool>?> logout() async {
+    return await BujuanMusicManager()
+        .post<CommonApiResponse<bool>>(url: Api.logout, options: createOption(), data: {});
   }
 }

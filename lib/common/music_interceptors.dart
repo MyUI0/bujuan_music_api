@@ -11,6 +11,7 @@ import 'music_api.dart';
 import 'encrypt.dart';
 
 const String defaultHost = 'https://interface.music.163.com';
+const String defaultUrl = 'https://music.163.com';
 const realIp = 'X-Real-IP';
 
 enum EncryptType { linuxForward, weApi, eApi }
@@ -90,12 +91,6 @@ class MusicApiInterceptors extends InterceptorsWrapper {
     if (response.statusCode != 200 || response.data == null) {
       return;
     }
-
-    // final Map<String, dynamic> responseData = response.data;
-    // BaseApiResponse apiResponse = BaseApiResponse()
-    //   ..code = responseData['code'] ?? 0
-    //   ..data = (responseData..remove('code'));
-    // response.data = apiResponse.toJson();
     handler.next(response);
   }
 
