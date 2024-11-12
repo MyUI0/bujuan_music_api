@@ -26,48 +26,27 @@ class UserPlaylistPlaylist {
 	List<dynamic>? subscribers = [];
 	bool? subscribed = false;
 	UserPlaylistPlaylistCreator? creator;
-	@JSONField(name: "artists ")
 	dynamic artists;
-	@JSONField(name: "tracks ")
 	dynamic tracks;
-	@JSONField(name: "top ")
 	bool? top = false;
-	@JSONField(name: "updateFrequency ")
-	dynamic updatefrequency;
-	@JSONField(name: "backgroundCoverId ")
-	int? backgroundcoverid = 0;
-	@JSONField(name: "backgroundCoverUrl ")
-	String? backgroundcoverurl = '';
-	@JSONField(name: "titleImage ")
-	int? titleimage = 0;
-	@JSONField(name: "titleImageUrl ")
-	String? titleimageurl = '';
-	@JSONField(name: "englishTitle ")
-	String? englishtitle = '';
-	@JSONField(name: "opRecommend ")
-	bool? oprecommend = false;
-	@JSONField(name: "subscribedCount ")
-	int? subscribedcount = 0;
-	@JSONField(name: "cloudTrackCount ")
-	int? cloudtrackcount = 0;
-	@JSONField(name: "userId ")
-	int? userid = 0;
-	@JSONField(name: "totalDuration ")
-	int? totalduration = 0;
-	@JSONField(name: "coverImgId ")
-	int? coverimgid = 0;
-	@JSONField(name: "privacy ")
+	dynamic updateFrequency;
+	int? backgroundCoverId = 0;
+	String? backgroundCoverUrl = '';
+	String? titleImage = '';
+	String? titleImageUrl = '';
+	String? englishTitle = '';
+	bool? opRecommend = false;
+	int? subscribedCount = 0;
+	int? cloudTrackCount = 0;
+	int? userId = 0;
+	int? totalDuration = 0;
+	int? coverImgId = 0;
 	int? privacy = 0;
-	@JSONField(name: "trackUpdateTime ")
-	int? trackupdatetime = 0;
-	@JSONField(name: "trackCount ")
-	int? trackcount = 0;
-	@JSONField(name: "updateTime ")
-	int? updatetime = 0;
-	@JSONField(name: "commentThreadId ")
-	String? commentthreadid = '';
-	@JSONField(name: "coverImgUrl ")
-	String? coverimgurl = '';
+	int? trackUpdateTime = 0;
+	int? trackCount = 0;
+	int? updateTime = 0;
+	String? commentThreadId = '';
+	String? coverImgUrl = '';
 	int? specialType = 0;
 	bool? anonimous = false;
 	int? createTime = 0;
@@ -85,8 +64,7 @@ class UserPlaylistPlaylist {
 	@JSONField(name: "coverImgId_str")
 	String? coverimgidStr = '';
 	bool? copied = false;
-	@JSONField(name: "containsTracks ")
-	bool? containstracks = false;
+	bool? containsTracks = false;
 
 	UserPlaylistPlaylist();
 

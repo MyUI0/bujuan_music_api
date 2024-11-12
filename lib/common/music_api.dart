@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:bujuan_music_api/generated/json/base/json_convert_content.dart';
 import 'package:cookie_jar/cookie_jar.dart';
 import 'package:dio/dio.dart';
@@ -51,6 +53,9 @@ class BujuanMusicManager with UserApi {
 
   Future<T?> post<T>({required String url, Options? options, Object? data}) async {
     Response response = await _dio.post(url, options: options, data: data);
+    if (response.data is! Map) {
+      response.data = jsonDecode(response.data);
+    }
     return jsonConvert.convert<T>(response.data);
   }
 

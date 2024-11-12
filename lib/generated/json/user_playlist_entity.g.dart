@@ -56,89 +56,89 @@ UserPlaylistPlaylist $UserPlaylistPlaylistFromJson(Map<String, dynamic> json) {
   if (creator != null) {
     userPlaylistPlaylist.creator = creator;
   }
-  final dynamic artists = json['artists '];
+  final dynamic artists = json['artists'];
   if (artists != null) {
     userPlaylistPlaylist.artists = artists;
   }
-  final dynamic tracks = json['tracks '];
+  final dynamic tracks = json['tracks'];
   if (tracks != null) {
     userPlaylistPlaylist.tracks = tracks;
   }
-  final bool? top = jsonConvert.convert<bool>(json['top ']);
+  final bool? top = jsonConvert.convert<bool>(json['top']);
   if (top != null) {
     userPlaylistPlaylist.top = top;
   }
-  final dynamic updatefrequency = json['updateFrequency '];
-  if (updatefrequency != null) {
-    userPlaylistPlaylist.updatefrequency = updatefrequency;
+  final dynamic updateFrequency = json['updateFrequency'];
+  if (updateFrequency != null) {
+    userPlaylistPlaylist.updateFrequency = updateFrequency;
   }
-  final int? backgroundcoverid = jsonConvert.convert<int>(json['backgroundCoverId ']);
-  if (backgroundcoverid != null) {
-    userPlaylistPlaylist.backgroundcoverid = backgroundcoverid;
+  final int? backgroundCoverId = jsonConvert.convert<int>(json['backgroundCoverId']);
+  if (backgroundCoverId != null) {
+    userPlaylistPlaylist.backgroundCoverId = backgroundCoverId;
   }
-  final String? backgroundcoverurl = jsonConvert.convert<String>(json['backgroundCoverUrl ']);
-  if (backgroundcoverurl != null) {
-    userPlaylistPlaylist.backgroundcoverurl = backgroundcoverurl;
+  final String? backgroundCoverUrl = jsonConvert.convert<String>(json['backgroundCoverUrl']);
+  if (backgroundCoverUrl != null) {
+    userPlaylistPlaylist.backgroundCoverUrl = backgroundCoverUrl;
   }
-  final int? titleimage = jsonConvert.convert<int>(json['titleImage ']);
-  if (titleimage != null) {
-    userPlaylistPlaylist.titleimage = titleimage;
+  final String? titleImage = jsonConvert.convert<String>(json['titleImage']);
+  if (titleImage != null) {
+    userPlaylistPlaylist.titleImage = titleImage;
   }
-  final String? titleimageurl = jsonConvert.convert<String>(json['titleImageUrl ']);
-  if (titleimageurl != null) {
-    userPlaylistPlaylist.titleimageurl = titleimageurl;
+  final String? titleImageUrl = jsonConvert.convert<String>(json['titleImageUrl']);
+  if (titleImageUrl != null) {
+    userPlaylistPlaylist.titleImageUrl = titleImageUrl;
   }
-  final String? englishtitle = jsonConvert.convert<String>(json['englishTitle ']);
-  if (englishtitle != null) {
-    userPlaylistPlaylist.englishtitle = englishtitle;
+  final String? englishTitle = jsonConvert.convert<String>(json['englishTitle']);
+  if (englishTitle != null) {
+    userPlaylistPlaylist.englishTitle = englishTitle;
   }
-  final bool? oprecommend = jsonConvert.convert<bool>(json['opRecommend ']);
-  if (oprecommend != null) {
-    userPlaylistPlaylist.oprecommend = oprecommend;
+  final bool? opRecommend = jsonConvert.convert<bool>(json['opRecommend']);
+  if (opRecommend != null) {
+    userPlaylistPlaylist.opRecommend = opRecommend;
   }
-  final int? subscribedcount = jsonConvert.convert<int>(json['subscribedCount ']);
-  if (subscribedcount != null) {
-    userPlaylistPlaylist.subscribedcount = subscribedcount;
+  final int? subscribedCount = jsonConvert.convert<int>(json['subscribedCount']);
+  if (subscribedCount != null) {
+    userPlaylistPlaylist.subscribedCount = subscribedCount;
   }
-  final int? cloudtrackcount = jsonConvert.convert<int>(json['cloudTrackCount ']);
-  if (cloudtrackcount != null) {
-    userPlaylistPlaylist.cloudtrackcount = cloudtrackcount;
+  final int? cloudTrackCount = jsonConvert.convert<int>(json['cloudTrackCount']);
+  if (cloudTrackCount != null) {
+    userPlaylistPlaylist.cloudTrackCount = cloudTrackCount;
   }
-  final int? userid = jsonConvert.convert<int>(json['userId ']);
-  if (userid != null) {
-    userPlaylistPlaylist.userid = userid;
+  final int? userId = jsonConvert.convert<int>(json['userId']);
+  if (userId != null) {
+    userPlaylistPlaylist.userId = userId;
   }
-  final int? totalduration = jsonConvert.convert<int>(json['totalDuration ']);
-  if (totalduration != null) {
-    userPlaylistPlaylist.totalduration = totalduration;
+  final int? totalDuration = jsonConvert.convert<int>(json['totalDuration']);
+  if (totalDuration != null) {
+    userPlaylistPlaylist.totalDuration = totalDuration;
   }
-  final int? coverimgid = jsonConvert.convert<int>(json['coverImgId ']);
-  if (coverimgid != null) {
-    userPlaylistPlaylist.coverimgid = coverimgid;
+  final int? coverImgId = jsonConvert.convert<int>(json['coverImgId']);
+  if (coverImgId != null) {
+    userPlaylistPlaylist.coverImgId = coverImgId;
   }
-  final int? privacy = jsonConvert.convert<int>(json['privacy ']);
+  final int? privacy = jsonConvert.convert<int>(json['privacy']);
   if (privacy != null) {
     userPlaylistPlaylist.privacy = privacy;
   }
-  final int? trackupdatetime = jsonConvert.convert<int>(json['trackUpdateTime ']);
-  if (trackupdatetime != null) {
-    userPlaylistPlaylist.trackupdatetime = trackupdatetime;
+  final int? trackUpdateTime = jsonConvert.convert<int>(json['trackUpdateTime']);
+  if (trackUpdateTime != null) {
+    userPlaylistPlaylist.trackUpdateTime = trackUpdateTime;
   }
-  final int? trackcount = jsonConvert.convert<int>(json['trackCount ']);
-  if (trackcount != null) {
-    userPlaylistPlaylist.trackcount = trackcount;
+  final int? trackCount = jsonConvert.convert<int>(json['trackCount']);
+  if (trackCount != null) {
+    userPlaylistPlaylist.trackCount = trackCount;
   }
-  final int? updatetime = jsonConvert.convert<int>(json['updateTime ']);
-  if (updatetime != null) {
-    userPlaylistPlaylist.updatetime = updatetime;
+  final int? updateTime = jsonConvert.convert<int>(json['updateTime']);
+  if (updateTime != null) {
+    userPlaylistPlaylist.updateTime = updateTime;
   }
-  final String? commentthreadid = jsonConvert.convert<String>(json['commentThreadId ']);
-  if (commentthreadid != null) {
-    userPlaylistPlaylist.commentthreadid = commentthreadid;
+  final String? commentThreadId = jsonConvert.convert<String>(json['commentThreadId']);
+  if (commentThreadId != null) {
+    userPlaylistPlaylist.commentThreadId = commentThreadId;
   }
-  final String? coverimgurl = jsonConvert.convert<String>(json['coverImgUrl ']);
-  if (coverimgurl != null) {
-    userPlaylistPlaylist.coverimgurl = coverimgurl;
+  final String? coverImgUrl = jsonConvert.convert<String>(json['coverImgUrl']);
+  if (coverImgUrl != null) {
+    userPlaylistPlaylist.coverImgUrl = coverImgUrl;
   }
   final int? specialType = jsonConvert.convert<int>(json['specialType']);
   if (specialType != null) {
@@ -205,9 +205,9 @@ UserPlaylistPlaylist $UserPlaylistPlaylistFromJson(Map<String, dynamic> json) {
   if (copied != null) {
     userPlaylistPlaylist.copied = copied;
   }
-  final bool? containstracks = jsonConvert.convert<bool>(json['containsTracks ']);
-  if (containstracks != null) {
-    userPlaylistPlaylist.containstracks = containstracks;
+  final bool? containsTracks = jsonConvert.convert<bool>(json['containsTracks']);
+  if (containsTracks != null) {
+    userPlaylistPlaylist.containsTracks = containsTracks;
   }
   return userPlaylistPlaylist;
 }
@@ -217,27 +217,27 @@ Map<String, dynamic> $UserPlaylistPlaylistToJson(UserPlaylistPlaylist entity) {
   data['subscribers'] = entity.subscribers;
   data['subscribed'] = entity.subscribed;
   data['creator'] = entity.creator?.toJson();
-  data['artists '] = entity.artists;
-  data['tracks '] = entity.tracks;
-  data['top '] = entity.top;
-  data['updateFrequency '] = entity.updatefrequency;
-  data['backgroundCoverId '] = entity.backgroundcoverid;
-  data['backgroundCoverUrl '] = entity.backgroundcoverurl;
-  data['titleImage '] = entity.titleimage;
-  data['titleImageUrl '] = entity.titleimageurl;
-  data['englishTitle '] = entity.englishtitle;
-  data['opRecommend '] = entity.oprecommend;
-  data['subscribedCount '] = entity.subscribedcount;
-  data['cloudTrackCount '] = entity.cloudtrackcount;
-  data['userId '] = entity.userid;
-  data['totalDuration '] = entity.totalduration;
-  data['coverImgId '] = entity.coverimgid;
-  data['privacy '] = entity.privacy;
-  data['trackUpdateTime '] = entity.trackupdatetime;
-  data['trackCount '] = entity.trackcount;
-  data['updateTime '] = entity.updatetime;
-  data['commentThreadId '] = entity.commentthreadid;
-  data['coverImgUrl '] = entity.coverimgurl;
+  data['artists'] = entity.artists;
+  data['tracks'] = entity.tracks;
+  data['top'] = entity.top;
+  data['updateFrequency'] = entity.updateFrequency;
+  data['backgroundCoverId'] = entity.backgroundCoverId;
+  data['backgroundCoverUrl'] = entity.backgroundCoverUrl;
+  data['titleImage'] = entity.titleImage;
+  data['titleImageUrl'] = entity.titleImageUrl;
+  data['englishTitle'] = entity.englishTitle;
+  data['opRecommend'] = entity.opRecommend;
+  data['subscribedCount'] = entity.subscribedCount;
+  data['cloudTrackCount'] = entity.cloudTrackCount;
+  data['userId'] = entity.userId;
+  data['totalDuration'] = entity.totalDuration;
+  data['coverImgId'] = entity.coverImgId;
+  data['privacy'] = entity.privacy;
+  data['trackUpdateTime'] = entity.trackUpdateTime;
+  data['trackCount'] = entity.trackCount;
+  data['updateTime'] = entity.updateTime;
+  data['commentThreadId'] = entity.commentThreadId;
+  data['coverImgUrl'] = entity.coverImgUrl;
   data['specialType'] = entity.specialType;
   data['anonimous'] = entity.anonimous;
   data['createTime'] = entity.createTime;
@@ -254,7 +254,7 @@ Map<String, dynamic> $UserPlaylistPlaylistToJson(UserPlaylistPlaylist entity) {
   data['id'] = entity.id;
   data['coverImgId_str'] = entity.coverimgidStr;
   data['copied'] = entity.copied;
-  data['containsTracks '] = entity.containstracks;
+  data['containsTracks'] = entity.containsTracks;
   return data;
 }
 
@@ -266,24 +266,24 @@ extension UserPlaylistPlaylistExtension on UserPlaylistPlaylist {
     dynamic artists,
     dynamic tracks,
     bool? top,
-    dynamic updatefrequency,
-    int? backgroundcoverid,
-    String? backgroundcoverurl,
-    int? titleimage,
-    String? titleimageurl,
-    String? englishtitle,
-    bool? oprecommend,
-    int? subscribedcount,
-    int? cloudtrackcount,
-    int? userid,
-    int? totalduration,
-    int? coverimgid,
+    dynamic updateFrequency,
+    int? backgroundCoverId,
+    String? backgroundCoverUrl,
+    String? titleImage,
+    String? titleImageUrl,
+    String? englishTitle,
+    bool? opRecommend,
+    int? subscribedCount,
+    int? cloudTrackCount,
+    int? userId,
+    int? totalDuration,
+    int? coverImgId,
     int? privacy,
-    int? trackupdatetime,
-    int? trackcount,
-    int? updatetime,
-    String? commentthreadid,
-    String? coverimgurl,
+    int? trackUpdateTime,
+    int? trackCount,
+    int? updateTime,
+    String? commentThreadId,
+    String? coverImgUrl,
     int? specialType,
     bool? anonimous,
     int? createTime,
@@ -300,7 +300,7 @@ extension UserPlaylistPlaylistExtension on UserPlaylistPlaylist {
     int? id,
     String? coverimgidStr,
     bool? copied,
-    bool? containstracks,
+    bool? containsTracks,
   }) {
     return UserPlaylistPlaylist()
       ..subscribers = subscribers ?? this.subscribers
@@ -309,24 +309,24 @@ extension UserPlaylistPlaylistExtension on UserPlaylistPlaylist {
       ..artists = artists ?? this.artists
       ..tracks = tracks ?? this.tracks
       ..top = top ?? this.top
-      ..updatefrequency = updatefrequency ?? this.updatefrequency
-      ..backgroundcoverid = backgroundcoverid ?? this.backgroundcoverid
-      ..backgroundcoverurl = backgroundcoverurl ?? this.backgroundcoverurl
-      ..titleimage = titleimage ?? this.titleimage
-      ..titleimageurl = titleimageurl ?? this.titleimageurl
-      ..englishtitle = englishtitle ?? this.englishtitle
-      ..oprecommend = oprecommend ?? this.oprecommend
-      ..subscribedcount = subscribedcount ?? this.subscribedcount
-      ..cloudtrackcount = cloudtrackcount ?? this.cloudtrackcount
-      ..userid = userid ?? this.userid
-      ..totalduration = totalduration ?? this.totalduration
-      ..coverimgid = coverimgid ?? this.coverimgid
+      ..updateFrequency = updateFrequency ?? this.updateFrequency
+      ..backgroundCoverId = backgroundCoverId ?? this.backgroundCoverId
+      ..backgroundCoverUrl = backgroundCoverUrl ?? this.backgroundCoverUrl
+      ..titleImage = titleImage ?? this.titleImage
+      ..titleImageUrl = titleImageUrl ?? this.titleImageUrl
+      ..englishTitle = englishTitle ?? this.englishTitle
+      ..opRecommend = opRecommend ?? this.opRecommend
+      ..subscribedCount = subscribedCount ?? this.subscribedCount
+      ..cloudTrackCount = cloudTrackCount ?? this.cloudTrackCount
+      ..userId = userId ?? this.userId
+      ..totalDuration = totalDuration ?? this.totalDuration
+      ..coverImgId = coverImgId ?? this.coverImgId
       ..privacy = privacy ?? this.privacy
-      ..trackupdatetime = trackupdatetime ?? this.trackupdatetime
-      ..trackcount = trackcount ?? this.trackcount
-      ..updatetime = updatetime ?? this.updatetime
-      ..commentthreadid = commentthreadid ?? this.commentthreadid
-      ..coverimgurl = coverimgurl ?? this.coverimgurl
+      ..trackUpdateTime = trackUpdateTime ?? this.trackUpdateTime
+      ..trackCount = trackCount ?? this.trackCount
+      ..updateTime = updateTime ?? this.updateTime
+      ..commentThreadId = commentThreadId ?? this.commentThreadId
+      ..coverImgUrl = coverImgUrl ?? this.coverImgUrl
       ..specialType = specialType ?? this.specialType
       ..anonimous = anonimous ?? this.anonimous
       ..createTime = createTime ?? this.createTime
@@ -343,7 +343,7 @@ extension UserPlaylistPlaylistExtension on UserPlaylistPlaylist {
       ..id = id ?? this.id
       ..coverimgidStr = coverimgidStr ?? this.coverimgidStr
       ..copied = copied ?? this.copied
-      ..containstracks = containstracks ?? this.containstracks;
+      ..containsTracks = containsTracks ?? this.containsTracks;
   }
 }
 

@@ -25,11 +25,12 @@ start using the package.
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
 ```dart
-const like = 'sample';
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final appDocDir = await getApplicationDocumentsDirectory();
+  await BujuanMusicManager().init(cookiePath: '${appDocDir.path}/cookies', debug: true);
+}
 ```
 
 ## Additional information
