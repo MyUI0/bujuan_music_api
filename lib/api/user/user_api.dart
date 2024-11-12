@@ -1,4 +1,5 @@
 import 'package:bujuan_music_api/api/common_api_response.dart';
+import 'package:bujuan_music_api/api/user/entity/like_list_entity.dart';
 import 'package:bujuan_music_api/api/user/entity/qrcode_key_entity.dart';
 import 'package:bujuan_music_api/api/user/entity/user_info_entity.dart';
 import 'package:bujuan_music_api/api/user/entity/user_playlist_entity.dart';
@@ -123,6 +124,15 @@ mixin UserApi {
     };
     return await BujuanMusicManager()
         .post<UserPlaylistEntity>(url: Api.userPlaylist, options: createOption(), data: data);
+  }
+
+  /// 用户喜欢的歌曲列表
+  ///
+  /// [uid] 用户id（必填）
+  Future<LikeListEntity?> userLikeList({required String uid}) async {
+    final data = {'uid': uid};
+    return await BujuanMusicManager()
+        .post<LikeListEntity>(url: Api.userLikeList, options: createOption(), data: data);
   }
 
   /// 退出登录

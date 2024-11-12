@@ -4,7 +4,6 @@ import 'dart:math';
 import 'dart:typed_data';
 import 'package:cookie_jar/cookie_jar.dart';
 import 'package:dio/dio.dart';
-import 'package:dio_cookie_manager/dio_cookie_manager.dart';
 import 'package:encrypt/encrypt.dart';
 import 'package:pointycastle/digests/md5.dart';
 import 'music_api.dart';
@@ -65,12 +64,12 @@ class MusicApiInterceptors extends InterceptorsWrapper {
     }
     options.headers[HttpHeaders.userAgentHeader] = getUserAgent(options.extra['userAgent']);
     var cookies = await getCookies(host: options.uri);
-    var cookiesSb = StringBuffer(CookieManager.getCookies(cookies));
-    options.extra['cookies'].forEach((key, value) {
-      cookiesSb.write(' ;${Uri.encodeComponent(key)}=${Uri.encodeComponent(value)}');
-    });
-    options.headers[HttpHeaders.cookieHeader] = cookiesSb.toString();
-    options.extra['cookiesHash'] = await loadCookiesHash(cookies: cookies);
+    // var cookiesSb = StringBuffer(CookieManager.getCookies(cookies));
+    // options.extra['cookies'].forEach((key, value) {
+    //   cookiesSb.write(' ;${Uri.encodeComponent(key)}=${Uri.encodeComponent(value)}');
+    // });
+    // options.headers[HttpHeaders.cookieHeader] = cookiesSb.toString();
+    // options.extra['cookiesHash'] = await loadCookiesHash(cookies: cookies);
     switch (options.extra['encryptType']) {
       case EncryptType.linuxForward:
         _handleLinuxForward(options);
