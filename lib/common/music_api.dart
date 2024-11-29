@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:bujuan_music_api/api/album/album_api.dart';
+import 'package:bujuan_music_api/api/playlist/playlist_api.dart';
 import 'package:bujuan_music_api/api/recommend/recommend_api.dart';
 import 'package:bujuan_music_api/api/top/top_api.dart';
 import 'package:bujuan_music_api/generated/json/base/json_convert_content.dart';
@@ -12,7 +14,7 @@ import 'cookie.dart';
 import '../api/user/user_api.dart';
 import 'music_interceptors.dart';
 
-class BujuanMusicManager with UserApi, RecommendApi,TopApi {
+class BujuanMusicManager with UserApi, RecommendApi, TopApi, AlbumApi, PlaylistApi {
   static final BujuanMusicManager _instance = BujuanMusicManager._internal();
 
   factory BujuanMusicManager() => _instance;
@@ -54,7 +56,7 @@ class BujuanMusicManager with UserApi, RecommendApi,TopApi {
   }
 
   Future<T?> post<T>({required String url, Options? options, Object? data}) async {
-    Response response = await _dio.post(url, options: options, data: data ?? {});
+    Response response = await _dio.post(url, options: options ?? createOption(), data: data ?? {});
     if (response.data is! Map) {
       response.data = jsonDecode(response.data);
     }
