@@ -1,0 +1,44 @@
+name: Generate and Upload Code Files for bujuan_music_api
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+  workflow_dispatch:  # 添加手动触发工作流的配置
+
+jobs:
+  generate_files:
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # 设置Dart环境，有助于后续获取Flutter版本相关操作
+      - name: Set up Dart
+        uses: dart-lang/setup-dart@v1
+        
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.24.5'
+          channel: 'stable'
+
+      # 安装项目依赖
+      - name: Install dependencies
+        run: flutter pub get
+
+      # 执行代码生成命令（假设使用json_serializable等相关工具生成.g.dart文件）
+      - name: Generate code files
+        run: flutter pub run build_runner build
+
+      # 可选：运行测试用例验证生成的代码文件（如果项目有相关测试代码的话）
+      - name: Run tests
+        run: flutter test
+
+      # 将生成的文件作为Artifact上传
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Generated_Code_Files
+          path: "**/*.g.dart"  # 这里指定上传所有.g.dart文件，你可以根据实际需求调整路径
